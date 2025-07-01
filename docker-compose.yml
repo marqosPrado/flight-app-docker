@@ -23,6 +23,15 @@ services:
       - .env
     networks:
       - flight-network
+  
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - flight-network
 
 volumes:
   postgres_data:
